@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Certification name:</strong>
+  <%= @certification.certification_name %>
+</p>
+
+<p>
+  <strong>Certification type:</strong>
+  <%= @certification.certification_type %>
+</p>
+
+<p>
+  <strong>Certification provider:</strong>
+  <%= @certification.certification_provider %>
+</p>
+
+<p>
+  <strong>Certification issued:</strong>
+  <%= @certification.certification_issued %>
+</p>
+
+<p>
+  <strong>Certification expiry:</strong>
+  <%= @certification.certification_expiry %>
+</p>
+
+<p>
+  <strong>Certification description:</strong>
+  <%= @certification.certification_description %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @certification.user %>
+</p>
+
+<%= link_to 'Edit', edit_certification_path(@certification) %> |
+<%= link_to 'Back', certifications_path %>
