@@ -1,39 +1,34 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Certification -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Certification %></h1>
+</div>
 
-<p>
-  <strong>Certification name:</strong>
-  <%= @certification.certification_name %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:certification_name) %></dt>
+      <dd><pre class="prettyprint"><%= @certification.certification_name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:certification_type) %></dt>
+      <dd><pre class="prettyprint"><%= @certification.certification_type %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:certification_provider) %></dt>
+      <dd><pre class="prettyprint"><%= @certification.certification_provider %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:certification_issued) %></dt>
+      <dd><pre class="prettyprint"><%= @certification.certification_issued %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:certification_expiry) %></dt>
+      <dd><pre class="prettyprint"><%= @certification.certification_expiry %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:certification_description) %></dt>
+      <dd><pre class="prettyprint"><%= @certification.certification_description %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Certification type:</strong>
-  <%= @certification.certification_type %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              certifications_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_certification_path(@certification), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              certification_path(@certification),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Certification provider:</strong>
-  <%= @certification.certification_provider %>
-</p>
-
-<p>
-  <strong>Certification issued:</strong>
-  <%= @certification.certification_issued %>
-</p>
-
-<p>
-  <strong>Certification expiry:</strong>
-  <%= @certification.certification_expiry %>
-</p>
-
-<p>
-  <strong>Certification description:</strong>
-  <%= @certification.certification_description %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @certification.user %>
-</p>
-
-<%= link_to 'Edit', edit_certification_path(@certification) %> |
-<%= link_to 'Back', certifications_path %>
